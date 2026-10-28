@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#003314">
+    <meta
+      name="description"
+      content="GivingOurs turns unused UK employee volunteering days into expert support for small businesses in Nigeria."
+    >
+    <title>GivingOurs — Global expertise for developing businesses</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="GivingOurs home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="36" height="36">
+          <span class="brand-name">GivingOurs</span>
+        </a>
+        <div class="nav-links">
+          <a href="#how-it-works">How it works</a>
+          <a href="#volunteers">Volunteers</a>
+          <a class="button button-outline" href="#employers">For employers</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Supporting UN SDG 9 · Industry, innovation &amp; infrastructure</p>
+            <h1 id="hero-title">Global expertise for <em>developing businesses.</em></h1>
+            <p class="hero-intro">
+              GivingOurs turns unused UK employee volunteering days into
+              skilled, one-off support for small businesses in Nigeria.
+            </p>
+          </div>
+
+          <div class="hero-split">
+            <article class="hero-panel">
+              <span class="panel-label">For small businesses in Nigeria</span>
+              <h2>Running a small business in Nigeria and need expert help?</h2>
+              <p>Book free time with experienced UK professionals in finance, marketing, technology and operations.</p>
+              <a class="panel-link" href="#volunteers">
+                Browse volunteers
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </article>
+            <article class="hero-panel hero-panel-light">
+              <span class="panel-label">For UK employers</span>
+              <h2>Want your employees to use their volunteering days?</h2>
+              <p>Give your people flexible, skills-based opportunities that create measurable impact abroad.</p>
+              <a class="panel-link" href="#employers">
+                Register your company
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="The opportunity">
+        <div class="container stats-inner">
+          <div class="stat">
+            <strong>140m</strong>
+            <span>volunteering hours go unused each year, according to the Royal Voluntary Service.</span>
+          </div>
+          <div class="stat-reasons">
+            <p class="stat-reasons-title">Why the hours go unused</p>
+            <ul>
+              <li>Too few flexible, one-off opportunities</li>
+              <li>Employees don’t know where to find them</li>
+              <li>Opportunities rarely match their expertise</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">How it works</p>
+              <h2 id="how-title">Like microlending, but with expertise instead of loans.</h2>
+            </div>
+            <p class="section-description">
+              Inspired by Kiva and Lend With Care, GivingOurs lets companies
+              give hours of skilled labour where it’s needed most.
+            </p>
+          </div>
+          <ol class="steps">
+            <li class="step">
+              <span class="step-number">01</span>
+              <h3>Employers sign up their teams</h3>
+              <p>UK companies register and invite employees who have volunteering days to give.</p>
+            </li>
+            <li class="step">
+              <span class="step-number">02</span>
+              <h3>Employees list their skills</h3>
+              <p>Each volunteer shares their expertise, workplace and the days they can “Give Hours”.</p>
+            </li>
+            <li class="step">
+              <span class="step-number">03</span>
+              <h3>Businesses book a slot</h3>
+              <p>Small businesses in Nigeria book the expertise they need for a focused, remote session.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-tinted" id="volunteers" aria-labelledby="volunteers-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Available volunteers</p>
+              <h2 id="volunteers-title">Experienced professionals, ready to give hours.</h2>
+            </div>
+            <p class="section-description">
+              Filter by expertise and request a session on one of their
+              available days.
+            </p>
+          </div>
+
+          <div class="filters" role="group" aria-label="Filter volunteers by expertise">
+            <button class="filter-button" type="button" aria-pressed="true" data-filter="all">All expertise</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-filter="finance">Finance</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-filter="marketing">Marketing</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-filter="technology">Technology</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-filter="operations">Operations</button>
+          </div>
+
+          <div class="volunteer-grid" id="volunteer-grid" aria-live="polite"></div>
+          <p class="demo-note">Demo profiles for illustration only.</p>
+        </div>
+      </section>
+
+      <section class="employers" id="employers" aria-labelledby="employers-title">
+        <div class="container employers-inner">
+          <div class="employers-copy">
+            <p class="section-kicker">For UK employers</p>
+            <h2 id="employers-title">Turn unused volunteering days into global impact.</h2>
+            <p>
+              Your employees already have the skills and the days. We give
+              them meaningful, flexible ways to use both.
+            </p>
+            <ul class="benefits">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.2 2.8 2.8 6.2-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Skills-based.</strong> Matched to each employee’s expertise.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.2 2.8 2.8 6.2-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Flexible.</strong> One-off remote sessions that fit around work.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.2 2.8 2.8 6.2-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span><strong>Measurable.</strong> Track hours given and businesses supported.</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="card-form" id="employer-form" novalidate>
+            <h3>Register your company</h3>
+            <p class="form-intro">Tell us about your organisation and we’ll be in touch to onboard your team.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="company">Company name</label>
+                <input id="company" name="company" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="company-size">Number of employees</label>
+                <select id="company-size" name="size" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>250–999</option>
+                  <option>1,000–4,999</option>
+                  <option>5,000–9,999</option>
+                  <option>10,000+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="contact-name">Your name</label>
+                <input id="contact-name" name="name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="contact-role">Job title</label>
+                <input id="contact-role" name="role" autocomplete="organization-title" placeholder="e.g. Head of CSR">
+              </div>
+              <div class="field full">
+                <label for="contact-email">Work email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field full">
+                <label for="volunteer-days">Volunteering days per employee, per year</label>
+                <select id="volunteer-days" name="days">
+                  <option value="" selected disabled>Select</option>
+                  <option>1 day</option>
+                  <option>2 days</option>
+                  <option>3–5 days</option>
+                  <option>More than 5 days</option>
+                </select>
+              </div>
+              <fieldset class="field full">
+                <legend>Key areas of employee expertise</legend>
+                <div class="checkboxes">
+                  <label><input type="checkbox" name="skills" value="finance"> Finance</label>
+                  <label><input type="checkbox" name="skills" value="marketing"> Marketing</label>
+                  <label><input type="checkbox" name="skills" value="technology"> Technology</label>
+                  <label><input type="checkbox" name="skills" value="operations"> Operations</label>
+                  <label><input type="checkbox" name="skills" value="legal"> Legal</label>
+                  <label><input type="checkbox" name="skills" value="hr"> People &amp; HR</label>
+                </div>
+              </fieldset>
+            </div>
+            <button class="button button-primary button-block" type="submit">Register interest</button>
+            <p class="form-status" id="employer-status" role="status" aria-live="polite"></p>
+            <p class="form-note">Prototype only — details are not submitted or stored.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand brand-small" href="#top" aria-label="GivingOurs home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="24" height="24">
+          <span class="brand-name">GivingOurs</span>
+        </a>
+        <p>Global expertise for developing businesses.</p>
+        <p class="footer-meta">Built for DevHack · UN Sustainable Development Goal 9</p>
+      </div>
+    </footer>
+
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+      <form class="booking-form" id="booking-form" method="dialog" novalidate>
+        <div class="dialog-header">
+          <div>
+            <p class="section-kicker">Request a session</p>
+            <h3 id="booking-title">Book time with <span data-booking-name></span></h3>
+            <p class="dialog-sub" data-booking-meta></p>
+          </div>
+          <button class="dialog-close" type="button" value="cancel" aria-label="Close" data-close>
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="booking-date">Available day</label>
+            <select id="booking-date" name="date" required></select>
+          </div>
+          <div class="field">
+            <label for="business-name">Business name</label>
+            <input id="business-name" name="business" required>
+          </div>
+          <div class="field">
+            <label for="business-city">City</label>
+            <input id="business-city" name="city" placeholder="e.g. Lagos" required>
+          </div>
+          <div class="field full">
+            <label for="business-email">Email</label>
+            <input id="business-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field full">
+            <label for="business-need">What do you need help with?</label>
+            <textarea id="business-need" name="need" rows="3" required></textarea>
+          </div>
+        </div>
+        <button class="button button-primary button-block" type="submit">Send request</button>
+        <p class="form-status" id="booking-status" role="status" aria-live="polite"></p>
+      </form>
+    </dialog>
+  </body>
+</html>
