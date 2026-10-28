@@ -1,99 +1,3 @@
-const VOLUNTEERS = [
-  {
-    name: "Adaeze Morris",
-    role: "Senior Finance Business Partner",
-    employer: "Aviva",
-    location: "Norwich",
-    skills: ["finance", "operations"],
-    tags: ["Cash-flow planning", "Pricing strategy", "Budgeting"],
-    dayOffsets: [9, 23, 37],
-  },
-  {
-    name: "James Okafor",
-    role: "Brand & Growth Strategy Manager",
-    employer: "PwC",
-    location: "London",
-    skills: ["marketing"],
-    tags: ["Brand strategy", "Go-to-market", "Customer research"],
-    dayOffsets: [14, 42],
-  },
-  {
-    name: "Dr Sophie Kingsley",
-    role: "Lecturer in Computing Sciences",
-    employer: "UEA",
-    location: "Norwich",
-    skills: ["technology"],
-    tags: ["Web development", "Data & AI", "Digital tools"],
-    dayOffsets: [6, 20, 34, 48],
-  },
-  {
-    name: "Tom Fletcher",
-    role: "Audit & Assurance Director",
-    employer: "PwC",
-    location: "Manchester",
-    skills: ["finance", "operations"],
-    tags: ["Bookkeeping", "Financial controls", "Investor readiness"],
-    dayOffsets: [11, 25],
-  },
-  {
-    name: "Ella Barnes",
-    role: "Lead UX Designer",
-    employer: "Aviva",
-    location: "London",
-    skills: ["technology", "marketing"],
-    tags: ["Website design", "User research", "E-commerce"],
-    dayOffsets: [16, 30, 44],
-  },
-  {
-    name: "Chika Nwosu",
-    role: "Supply Chain & Operations Lead",
-    employer: "UEA",
-    location: "Norwich",
-    skills: ["operations"],
-    tags: ["Supply chain", "Process improvement", "Logistics"],
-    dayOffsets: [8, 29],
-  },
-];
-
-const dateFormatter = new Intl.DateTimeFormat("en-GB", {
-  weekday: "short",
-  day: "numeric",
-  month: "short",
-});
-
-const shortDateFormatter = new Intl.DateTimeFormat("en-GB", {
-  day: "numeric",
-  month: "short",
-});
-
-// Demo availability is generated relative to today so dates never go stale.
-function upcomingDate(offset) {
-  const date = new Date();
-  date.setHours(0, 0, 0, 0);
-  date.setDate(date.getDate() + offset);
-  const day = date.getDay();
-  if (day === 6) date.setDate(date.getDate() + 2);
-  if (day === 0) date.setDate(date.getDate() + 1);
-  return date;
-}
-
-function initials(name) {
-  return name
-    .replace(/^Dr\s+/, "")
-    .split(/\s+/)
-    .map((part) => part[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
-function el(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined) node.textContent = text;
-  return node;
-}
-
 function metaRow(label, value) {
   const row = el("div");
   row.append(el("dt", "", label), el("dd", "", value));
@@ -123,11 +27,23 @@ function renderVolunteer(volunteer, index) {
   tags.setAttribute("aria-label", "Expertise");
   volunteer.tags.forEach((tag) => tags.append(el("li", "", tag)));
 
-  const action = el("button", "button", "Request a session");
-  action.type = "button";
-  action.dataset.volunteerIndex = String(index);
+  const stats = volunteerStats(volunteer);
+  const rating = el("p", "card-rating");
+  rating.append(
+    starRating(stats.rating),
+    el("strong", "", stats.rating.toFixed(1)),
+    el("span", "", `· ${stats.businesses} businesses helped`)
+  );
 
-  card.append(head, meta, tags, action);
+  const actions = el("div", "card-actions");
+  const profile = el("a", "button button-ghost", "See profile");
+  profile.href = `profile.html?id=${volunteer.id}`;
+  const request = el("button", "button button-primary", "Request a session");
+  request.type = "button";
+  request.dataset.volunteerIndex = String(index);
+  actions.append(profile, request);
+
+  card.append(head, rating, meta, tags, actions);
   return card;
 }
 
@@ -222,6 +138,13 @@ function setupBooking() {
     if (event.target === dialog) dialog.close();
   });
   dialog.addEventListener("close", () => lastTrigger?.focus());
+  // Chrome ignores Escape on dialogs opened without user activation (e.g. via ?book=).
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && dialog.open) {
+      event.preventDefault();
+      dialog.close();
+    }
+  }, true);
 
   bookingForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -260,6 +183,17 @@ function setupEmployerForm() {
   });
 }
 
+function openBookingFromUrl() {
+  const id = new URLSearchParams(location.search).get("book");
+  const volunteer = id && findVolunteer(id);
+  if (!volunteer) return;
+  const trigger = document.querySelector(`[data-volunteer-index="${VOLUNTEERS.indexOf(volunteer)}"]`);
+  history.replaceState(null, "", `${location.pathname}#volunteers`);
+  document.getElementById("volunteers").scrollIntoView();
+  openBooking(volunteer, trigger);
+}
+
 setupVolunteers();
 setupBooking();
 setupEmployerForm();
+openBookingFromUrl();

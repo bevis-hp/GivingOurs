@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#003314">
+    <meta name="description" content="A GivingOurs volunteer profile: businesses helped, expertise and ratings.">
+    <title>Volunteer profile — GivingOurs</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/data.js" defer></script>
+    <script src="assets/profile.js" defer></script>
+    <script src="assets/chat.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="GivingOurs home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="44" height="44">
+          <span class="brand-name">GivingOurs</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="index.html#why-volunteer">Why volunteer</a>
+          <a href="index.html#volunteers">Volunteers</a>
+          <a class="button button-outline" href="index.html#employers">For employers</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="profile-hero" aria-labelledby="profile-name">
+        <div class="container">
+          <a class="back-link" href="index.html#volunteers">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7.5 3.5 3 8l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All volunteers
+          </a>
+          <div class="profile-head">
+            <div class="profile-avatar" data-field="initials" aria-hidden="true"></div>
+            <div class="profile-identity">
+              <p class="verified-badge">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.2 2.8 2.8 6.2-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-field="verified"></span>
+              </p>
+              <h1 id="profile-name" data-field="name"></h1>
+              <p class="profile-role" data-field="role"></p>
+              <p class="profile-meta" data-field="meta"></p>
+            </div>
+            <div class="profile-actions">
+              <a class="button button-cream" data-field="book-link" href="index.html#volunteers">Request a session</a>
+              <button class="button button-outline" type="button" id="share-profile">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 10V2M4.5 5.5 8 2l3.5 3.5M3 9v4h10V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Share profile
+              </button>
+            </div>
+          </div>
+
+          <dl class="profile-stats">
+            <div class="profile-stat">
+              <dt>Average rating</dt>
+              <dd><span data-field="rating"></span><span data-field="rating-stars"></span></dd>
+            </div>
+            <div class="profile-stat">
+              <dt>Businesses helped</dt>
+              <dd data-field="businesses"></dd>
+            </div>
+            <div class="profile-stat">
+              <dt>Hours given</dt>
+              <dd data-field="hours"></dd>
+            </div>
+            <div class="profile-stat">
+              <dt>Nigerian cities reached</dt>
+              <dd data-field="cities"></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="container profile-body">
+        <div class="profile-main">
+          <section class="profile-section" aria-labelledby="impact-title">
+            <div class="profile-section-head">
+              <h2 id="impact-title">Impact record</h2>
+              <p>Every engagement is confirmed and rated by the business that was helped.</p>
+            </div>
+            <ol class="engagement-list" id="engagement-list"></ol>
+          </section>
+        </div>
+
+        <aside class="profile-side">
+          <section class="side-card" aria-labelledby="about-title">
+            <h2 id="about-title">About</h2>
+            <p data-field="bio"></p>
+            <p class="side-small">Volunteering with GivingOurs since <strong data-field="since"></strong></p>
+          </section>
+          <section class="side-card" aria-labelledby="expertise-title">
+            <h2 id="expertise-title">Expertise</h2>
+            <ul class="skill-list" id="profile-skills"></ul>
+          </section>
+          <section class="side-card" aria-labelledby="availability-title">
+            <h2 id="availability-title">Upcoming availability</h2>
+            <ul class="availability-list" id="profile-dates"></ul>
+            <a class="button button-primary button-block" data-field="book-link" href="index.html#volunteers">Request a session</a>
+          </section>
+        </aside>
+      </div>
+
+      <section class="container profile-missing" id="profile-missing" hidden>
+        <h1>Volunteer not found</h1>
+        <p>This profile doesn’t exist or may have been removed.</p>
+        <a class="button button-primary" href="index.html#volunteers">Browse volunteers</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand brand-small" href="index.html" aria-label="GivingOurs home">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="32" height="32">
+          <span class="brand-name">GivingOurs</span>
+        </a>
+        <p>Global expertise for developing businesses.</p>
+        <p class="footer-meta">Built for DevHack · UN Sustainable Development Goal 9</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
