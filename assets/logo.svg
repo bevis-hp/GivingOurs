@@ -1,6 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#EEDEC5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="24" cy="22" r="15"/>
-  <path d="M24 13v9l6 3.5"/>
-  <path d="M6 33c3-3 6.5-3.3 9.5-.7l4.5 4.2c1.2 1.1 2.5 1.6 4 1.6s2.8-.5 4-1.6l4.5-4.2c3-2.6 6.5-2.3 9.5.7"/>
-  <path d="M15.5 32.3 13 29.5M32.5 32.3l2.5-2.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <mask id="fingers">
+      <rect width="48" height="48" fill="#fff"/>
+      <g stroke="#000" stroke-width="0.9" stroke-linecap="round">
+        <path d="M18.6 34.4l3.6.5M18.4 36.2l3.4.3M19.2 32.7l3.2.6"/>
+        <path d="M4.6 39.4l5.4.9M43.4 39.4l-5.4.9"/>
+        <path d="M29.4 34.4l-3.6.5M29.6 36.2l-3.4.3M28.8 32.7l-3.2.6"/>
+      </g>
+    </mask>
+  </defs>
+  <g fill="none" stroke="#EEDEC5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="18.5" r="10"/>
+    <path d="M24 13v5.5l3.6 2.2"/>
+  </g>
+  <g fill="#EEDEC5" mask="url(#fingers)">
+    <path id="hand" d="M8.6 31.4 9.9 23.6c.2-1.1 1.2-1.8 2.3-1.6 1 .2 1.7 1.1 1.6 2.1l-.4 4.6c-.1 1.5.8 2.8 2.2 3.3l7.2 1.3c.8.1 1.3.8 1.3 1.6v2.3c0 .9-.8 1.6-1.7 1.5l-8.9-.9c-1.4-.1-2.7-.7-3.7-1.6z"/>
+    <path d="M8.8 30.8 10.2 37l-1.4 9H3.4z"/>
+    <path d="M39.2 30.8 37.8 37l1.4 9h5.4z"/>
+    <use href="#hand" transform="matrix(-1 0 0 1 48 0)"/>
+  </g>
 </svg>
